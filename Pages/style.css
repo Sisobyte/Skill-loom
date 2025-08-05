@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #fff;
+  padding: 20px;
+  min-height: 100vh;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar .logo {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar nav ul li.active {
+  font-weight: bold;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px 15px;
+}
+
+/* Intro Section */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.greeting, .mentorship {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.greeting button, .mentorship button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: #000;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Apprenticeship & Courses */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 10px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  min-width: 250px;
+}
+
+.card-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button.completed {
+  background: #4caf50;
+}
+
+.status {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status.in-progress {
+  color: orange;
+}
+
+.status.completed {
+  color: green;
+}
+
+/* Articles */
+.articles .thumbnail {
+  background: #ccc;
+  height: 120px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,289 @@
+/* ========== Global Styles ========== */    
+* {    
+  margin: 0;    
+  padding: 0;    
+  box-sizing: border-box;    
+  font-family: 'Open Sans', sans-serif;
+}    
+
+body {    
+  background: #f2f4f8;    
+  overflow-x: hidden;    
+}    
+
+
+
+/* ========== Keyframe Animations ========== */    
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ========== Layout ========== */
+.container {
+  display: flex;
+  min-height: 100vh;
+  animation: fadeIn 1s ease both;
+}
+
+/* ========== Left Panel ========== */
+.left-panel {
+  background-color: #f0f0f0;
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+  position: relative;
+  animation: slideInLeft 1s ease forwards;
+}
+
+.left-panel .logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  animation: fadeIn 1.2s ease forwards;
+  color: #0076FF; /* Primary */
+}
+
+/* ========== Right Panel ========== */
+.right-panel {
+  background-color: #FFFFFF; /* Accent */
+  width: 60%;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: slideInRight 1s ease forwards;
+}
+
+/* ========== Top Sign-in Link ========== */
+.signin-link-top {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  text-align: right;
+  animation: fadeIn 1.3s ease forwards;
+}
+
+.signin-link-top a {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid #0076FF; /* Primary */
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #0076FF;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.signin-link-top a:hover {
+  background: #00B86B; /* Secondary */
+  color: #FFFFFF; /* Accent */
+}
+
+/* ========== Main Content ========== */
+.content {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 1.2s ease both;
+}
+
+.content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0076FF;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ========== Account Options ========== */
+.account-type .option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.account-type .option:hover {
+  border-color: #00B86B; /* Secondary */
+  background: #f1fdf7;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 184, 107, 0.1);
+}
+
+/* ========== Icons ========== */
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  color: #00B86B; /* Secondary */
+}
+
+.option:hover .icon {
+  transform: scale(1.1);
+}
+
+/* ========== Texts & Arrows ========== */
+.option h3 {
+  margin-bottom: 0.3rem;
+  color: #0076FF; /* Primary */
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: #888;
+  transition: transform 0.3s ease;
+}
+
+.option:hover .arrow {
+  transform: translateX(5px);
+  color: #0076FF;
+}
+
+/* ========== Bottom Sign-in ========== */
+.signin-bottom {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  animation: fadeIn 1.5s ease both;
+}
+
+.signin-bottom a {
+  color: #0076FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signin-bottom a:hover {
+  color: #00B86B;
+}
+
+/* ========== Responsive (Mobile) ========== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .left-panel {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s ease both;
+  }
+
+  .left-panel .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #0076FF;
+  }
+
+  .right-panel {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    animation: fadeInUp 1s ease both;
+  }
+
+  .signin-link-top {
+    position: static;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .signin-link-top span,
+  .signin-link-top a {
+    font-size: 1rem;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0076FF;
+  }
+
+  .subtext {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+
+  .account-type {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .account-type .option {
+    flex-direction: row;
+    background: #f9f9f9;
+  }
+
+  .account-type .option:hover {
+    border-color: #00B86B;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+    color: #00B86B;
+  }
+
+  .arrow {
+    font-size: 1.3rem;
+  }
+
+  .signin-bottom {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}

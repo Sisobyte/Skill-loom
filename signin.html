@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sign In - Skilloom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signin.css" />
+</head>
+<body>
+  <div class="signin-container">
+    
+    <!-- Left Side (Image Placeholder) -->
+    <div class="left-panel">
+      <!-- You can replace this with an actual image -->
+    </div>
+
+   
+    <div class="right-panel">
+      <div class="logo">LOGO</div>
+
+      <div class="form-wrapper">
+        <h2>Sign in</h2>
+        <p>Please login to continue to your account.</p>
+
+        <form>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="enteryouremail@gmail.com" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" required />
+
+          <div class="checkbox-wrap">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Keep me logged in</label>
+          </div>
+
+          <button type="submit" class="btn black">Sign in</button>
+
+          <div class="divider">or</div>
+
+          <button type="button" class="btn google">
+            Sign in with Google
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" style="width: 20px; height: 20px; margin-left: 8px;" />
+          </button>
+        </form>
+
+        <p class="footer-text">
+          Need an account? <a href="signup.html">Create one</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="alert-container" class="alert-container hidden"></div>
+  <script src="signin.js"></script>
+</body>
+</html>

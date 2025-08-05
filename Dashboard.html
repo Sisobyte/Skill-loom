@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skilloom Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+  
+  <div class="dashboard-container">
+    
+<!-- Mobile Topbar -->
+<div class="mobile-topbar">
+  <div class="mobile-left">
+    <div class="avatar"></div>
+    <h4>Skilloom</h4>
+  </div>
+
+<div class="mobile-center">
+  <div class="mobile-search-wrapper">
+    <input type="text" class="mobile-searchbar" placeholder="Search..." />
+    <button class="mobile-search-icon">🔍</button>
+  </div>
+</div>
+
+  <div class="mobile-right">
+    <span class="mobile-bell">🔔</span>
+    <span id="menu-toggle" class="hamburger">☰</span>
+  </div>
+</div>
+
+<!-- Mobile Dropdown Menu -->
+<div class="mobile-dropdown hidden" id="mobile-dropdown">
+  <nav class="mobile-menu">
+    <a href="#" class="nav-link" data-page="dashboard">Dashboard</a>
+    <a href="#" class="nav-link" data-page="apprenticeship">Apprenticeship</a>
+    <a href="#" class="nav-link" data-page="courses">Courses</a>
+    <a href="#" class="nav-link" data-page="mentorship">Mentorship</a>
+    <a href="#" class="nav-link" data-page="settings">Settings</a>
+    <a href="#" class="logout">Logout</a>
+  </nav>
+</div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <div class="avatar"></div>
+          <div>
+            <h4>Skilloom</h4>
+          </div>
+        </div>
+
+        <nav class="menu">
+          <a href="" class="nav-link active" data-page="dashboard">Dashboard</a>
+          <a href="#" class="nav-link" data-page="apprenticeship">Apprenticeship</a>
+          <a href="#" class="nav-link" data-page="courses">Courses</a>
+          <a href="#" class="nav-link" data-page="mentorship">Mentorship</a>
+          <a href="#" class="nav-link" data-page="settings">Settings</a>
+        </nav>
+      </div>
+
+      <div class="logout">
+        <a href="#">Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="topbar">
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="searchbar" />
+          <button class="search-btn">Search</button>
+        </div>
+        <div class="icons">
+          <span class="bell">🔔</span>
+<div class="profile-circle" id="profile-initials">--</div>
+        </div>
+      </div>
+
+      <!-- Page content will be injected here -->
+      <div id="page-content"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="signup.js"></script>
+  
+</body>
+</html>

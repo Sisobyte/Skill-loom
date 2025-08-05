@@ -1,11 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skilloom.com</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    
+
+
+  <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">Logo</div>
+
+  <!-- Hamburger Menu Icon -->
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <!-- Sidebar -->
+  <div class="mobile-sidebar" id="mobile-sidebar">
+    <div class="sidebar-header">
+      <span class="close-btn" id="close-btn">✖</span>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <!-- <a href="#">About Us</a>
+      <a href="#">Apprenticeship Program</a>
+      <a href="#">Course</a> -->
+      <button class="btn-outline">Log In</button>
+      <button class="btn-dark">Get Started Today</button>
+    </nav>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <div class="nav-buttons">
+    <!-- <nav class="nav-links">
+      <a href="#">About Us</a>
+      <a href="#">Apprenticeship Program</a>
+      <a href="#">Course</a>
+    </nav> -->
+    <button class="btn-outline">Log In</button>
+    <button class="btn-dark">Get Started Today</button>
+  </div>
+</header>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <p class="trusted">
+        <span class="circle-images">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User 1" />
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User 2" />
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User 3" />
+        </span>
+        Trusted by 1K+ Users
+      </p>
+
+    <h1>You've Got the Skill <br><span>We Help You Weave It Into Something Real</span></h1>
+    <p class="description">Skilloom connects digital talent to real projects and mentorship that builds proof, not just potential.</p>
+    <button class="btn-dark">Get Started Today </button>
+
+  </section>
+
+
+ <!-- Divider Shape (Valley / Dip Style) -->
+<div class="hero-shape-divider"></div>
+
+
+
+
+
+  <!-- Logos -->
+<section class="logos">
+  <div class="logos-content">
+    <p>Proven success with 20,000+ top organizations</p>
+  </div>
+
+  <div class="logos-row">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Amazon_icon.svg" alt="Amazon" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/TwitchLogo.svg" alt="Twitch" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Coinbase_navy_logo.svg" alt="Coinbase" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.svg" alt="Uber" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+  </div>
+</section>
+
+
+
+
+
+  <!-- Apprentice Section -->
+<section class="apprentice">
+  <div class="toggle-buttons">
+    <button id="apprenticeBtn" class="active">For Apprentice</button>
+    <button id="companyBtn">For Company</button>
+  </div>
+
+  <h2 id="toggle-title">Stuck in the “no experience, no job” loop?</h2>
+  <p id="toggle-desc">
+    We get it. You've got skills, passion, and drive — but without real <br>
+    experience, breaking into the digital space can feel impossible.
+  </p>
+  <a href="#" class="browse-link" id="toggle-link">Browse Apprenticeship →</a>
+
+  <div class="cards" id="toggle-cards">
+    <div class="card" id="box1">Build portfolio-worthy work</div>
+    <div class="card" id="box2">Receive mentorship from pros</div>
+    <div class="card" id="box3">Apply to real digital briefs</div>
+    <div class="card" id="box4">Earn endorsements and badges</div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- Projects -->
+  <section class="projects" id="projects-section">
+    <h2>Choose a Project, Weave Your Experience</h2>
+    <p>Explore hands-on digital apprenticeship programs designed to grow <br> your skills, build your portfolio, and connect you with real-world mentors.</p>
+
+  <div class="filters">
+  <div class="filter-left">
+    <button class="active">All</button>
+    <button>Engineering</button>
+    <button>Design</button>
+    <button>Marketing</button>
+    <button>Data Science</button>
+    <button>Product Research</button>
+  </div>
+  <div class="filter-right">
+    <button style="border: 1px solid black;">Explore all →</button>
+    <button>&lt;</button>
+    <button>&gt;</button>
+  </div>
+</div>
+
+    <div class="project-cards">
+          <div class="project-card">
+       <div class="img-placeholder">
+          <div class="img-top-left">
+             1.2K Students 150 Reviews
+          </div>
+          <div class="img-bottom-label">
+            Advanced
+          </div>
+        </div>
+      <h4>BloomHealth</h4>
+      <p>Product Design Apprentice<br><small>Mentorship</small></p>
+
+     <div class="project-footer">
+        <div class="meta-block">
+          <p class="value">Duration</p>
+          <p class="label">6 weeks</p>
+        </div>
+        
+        <div class="meta-block">
+          <p class="value">Experience level</p>
+          <p class="label">Beginner</p>
+        </div>
+
+        <button class="apply-btn">Apply now</button>
+      </div>
+    </div>
+
+      <div class="project-card">
+        <div class="img-placeholder">
+          <div class="img-top-left">
+             1.2K Students 150 Reviews
+          </div>
+          <div class="img-bottom-label">
+            Advanced
+          </div>
+        </div>
+
+        <h4>Advance Data Fellowship</h4>
+        <p>Data Science Apprentice<br><small>Mentorship</small></p>
+
+          <div class="project-footer">
+              <div class="meta-block">
+                <p class="value">Duration</p>
+                <p class="label">6 weeks</p>
+              </div>
+              
+              <div class="meta-block">
+                <p class="value">Experience level</p>
+                <p class="label">Beginner</p>
+              </div>
+
+              <button class="apply-btn">Apply now</button>
+            </div>
+      </div>
+
+      <div class="project-card">
+        <div class="img-placeholder">
+          <div class="img-top-left">
+             1.2K Students 150 Reviews
+          </div>
+          <div class="img-bottom-label">
+            Advanced
+          </div>
+        </div>
+        <h4>BloomHealth</h4>
+        <p>Product Design Apprentice<br><small>Mentorship</small></p>
+
+         <div class="project-footer">
+        <div class="meta-block">
+          <p class="value">Duration</p>
+          <p class="label">6 weeks</p>
+        </div>
+        
+        <div class="meta-block">
+          <p class="value">Experience level</p>
+          <p class="label">Beginner</p>
+        </div>
+
+        <button class="apply-btn">Apply now</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+<!-- Explore -->
+ <section class="explore" id="explore-section">
+  <h2>Explore Courses made for you by <br> top Companies</h2>
+
+  <div class="filters">
+    <div class="filter-left">
+      <button class="active">All</button>
+      <button>Engineering</button>
+      <button>Design</button>
+      <button>Marketing</button>
+      <button>Data Science</button>
+      <button>Product Research</button>
+    </div>
+    <div class="filter-right">
+      <button>Explore all →</button>
+      <button>&lt;</button>
+      <button>&gt;</button>
+    </div>
+  </div>
+
+  <div class="project-cards">
+    <div class="project-card">
+      <div class="img-placeholder">
+        <div class="img-bottom-label">By Google</div>
+      </div>
+      <h4>Advance Data Fellowship Top Up V2</h4>
+      <p><small>8weeks</small></p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui laboriosam consectetur corporis 
+        eveniet! Incidunt quidem beatae quae impedit eveniet accusantium,
+         consectetur in explicabo fugiat, dolorem aperiam voluptas aliquam sit ea!</p>
+      <div class="project-footer">
+         <div class="meta-block">
+          <p class="value">Who is it for?</p>
+          <p class="label">Data Analyst...</p>
+        </div>
+        
+        <div class="meta-block">
+          <p class="value">Price</p>
+          <p class="label">Free</p>
+        </div>
+
+        <button class="apply-btn">Apply now</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="img-placeholder">
+        <div class="img-bottom-label">By Google</div>
+      </div>
+      <h4>Advance Data Fellowship Top Up V2</h4>
+      <p><small>8weeks</small></p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui laboriosam consectetur corporis 
+        eveniet! Incidunt quidem beatae quae impedit eveniet accusantium,
+         consectetur in explicabo fugiat, dolorem aperiam voluptas aliquam sit ea!</p>
+      <div class="project-footer">
+         <div class="meta-block">
+          <p class="value">Who is it for?</p>
+          <p class="label">Data Analyst...</p>
+        </div>
+        
+        <div class="meta-block">
+          <p class="value">Price</p>
+          <p class="label">Free</p>
+        </div>
+
+        <button class="apply-btn">Apply now</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="img-placeholder">
+        <div class="img-bottom-label">By Google</div>
+      </div>
+      <h4>Advance Data Fellowship Top Up V2</h4>
+      <p><small>6weeks</small></p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui laboriosam consectetur corporis 
+        eveniet! Incidunt quidem beatae quae impedit eveniet accusantium,
+         consectetur in explicabo fugiat, dolorem aperiam voluptas aliquam sit ea!</p>
+      <div class="project-footer">
+        <div class="meta-block">
+          <p class="value">Who is it for?</p>
+          <p class="label"> Data Analyst...</p>
+        </div>
+        
+        <div class="meta-block">
+          <p class="value">Price</p>
+          <p class="label">Free</p>
+        </div>
+
+        <button class="apply-btn">Apply now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Reviews -->
+<section class="reviews">
+  <h2>Loved by our community</h2>
+  <p class="reviews-subtitle">
+    Real stories from the people who've grown with Skill Loom—apprentices, mentors, and the team they worked with.
+  </p>
+
+  <div class="review-cards">
+    <div class="review-card">
+      <div class="review-header">
+          <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+          <div class="review-info">
+            <h4 class="review-title">Bloomhealth</h4>
+            <p class="review-subtitle">Product Designer Apprenticeship</p>
+            <small class="review-stats">133 students (31 reviews)</small>
+          </div>
+        </div>
+
+      <p class="review-comment">
+        Skilloom matched me with a mentor who helped me redesign a real product. It was challenging but so rewarding.
+      </p>
+      <div class="review-footer">
+        <img src="https://via.placeholder.com/40" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Jane Doe</strong><br>
+          <small>UX Designer</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-header">
+          <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+          <div class="review-info">
+            <h4 class="review-title">Bloomhealth</h4>
+            <p class="review-subtitle">Product Designer Apprenticeship</p>
+            <small class="review-stats">133 students (31 reviews)</small>
+          </div>
+        </div>
+
+      <p class="review-comment">
+        The project brief felt like a real job. And my mentor? Pure gold. I landed a contract afterward!
+      </p>
+      <div class="review-footer">
+        <img src="https://via.placeholder.com/40" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Michael Lee</strong><br>
+          <small>Frontend Developer</small>
+        </div>
+      </div>
+    </div>
+
+        <div class="review-card">
+          <div class="review-header">
+                <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+                <div class="review-info">
+                  <h4 class="review-title">Bloomhealth</h4>
+                  <p class="review-subtitle">Product Designer Apprenticeship</p>
+                  <small class="review-stats">133 students (31 reviews)</small>
+                </div>
+              </div>
+
+      <p class="review-comment">
+        The project brief felt like a real job. And my mentor? Pure gold. I landed a contract afterward!
+      </p>
+      <div class="review-footer">
+        <img src="https://via.placeholder.com/40" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Michael Lee</strong><br>
+          <small>Frontend Developer</small>
+        </div>
+      </div>
+    </div>
+
+        <div class="review-card">
+          <div class="review-header">
+              <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+              <div class="review-info">
+                <h4 class="review-title">Bloomhealth</h4>
+                <p class="review-subtitle">Product Designer Apprenticeship</p>
+                <small class="review-stats">133 students (31 reviews)</small>
+              </div>
+            </div>
+
+      <p class="review-comment">
+        The project brief felt like a real job. And my mentor? Pure gold. I landed a contract afterward!
+      </p>
+      <div class="review-footer">
+        <img src="https://via.placeholder.com/40" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Michael Lee</strong><br>
+          <small>Frontend Developer</small>
+        </div>
+      </div>
+    </div>
+
+        <div class="review-card">
+          <div class="review-header">
+              <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+              <div class="review-info">
+                <h4 class="review-title">Bloomhealth</h4>
+                <p class="review-subtitle">Product Designer Apprenticeship</p>
+                <small class="review-stats">133 students (31 reviews)</small>
+              </div>
+            </div>
+
+      <p class="review-comment">
+        The project brief felt like a real job. And my mentor? Pure gold. I landed a contract afterward!
+      </p>
+      <div class="review-footer">
+        <img src="https://via.placeholder.com/40" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Michael Lee</strong><br>
+          <small>Frontend Developer</small>
+        </div>
+      </div>
+    </div>
+
+        <div class="review-card">
+          <div class="review-header">
+              <img src="https://via.placeholder.com/60" alt="Reviewer" class="review-avatar" />
+
+              <div class="review-info">
+                <h4 class="review-title">Bloomhealth</h4>
+                <p class="review-subtitle">Product Designer Apprenticeship</p>
+                <small class="review-stats">133 students (31 reviews)</small>
+              </div>
+            </div>
+
+      <p class="review-comment">
+        The project brief felt like a real job. And my mentor? Pure gold. I landed a contract afterward!
+      </p>
+      <div class="review-footer">
+        <img src="" alt="Avatar" class="review-footer-img" />
+        <div class="review-person">
+          <strong>Michael Lee</strong><br>
+          <small>Frontend Developer</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- Call To Action -->
+<section class="cta">
+  <div class="cta-content">
+    <h2>Stop waiting. Start weaving real experience today.</h2>
+    <p>
+      Whether you're building your career or building your startup,<br>
+      Skilloom is where meaningful work and fresh talent meet.
+    </p>
+
+    <form class="cta-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Join Community</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="logo">Skilloom</div>
+      <p>Your gateway to real experience and digital growth. Learn by doing, grow by connecting.</p>
+      <small>&copy; 2025 Skilloom. All rights reserved.</small>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Product</h4>
+        <a href="#">How It Works</a>
+        <a href="#">Pricing</a>
+        <a href="#">Features</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Community</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <a href="#">Guides</a>
+        <a href="#">Docs</a>
+        <a href="#">Templates</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>

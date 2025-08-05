@@ -292,3 +292,18 @@ document.querySelectorAll('#explore-section .filters button').forEach(btn => {
 });
 
 renderExplore();
+
+
+
+document.getElementById('hero-get-started').addEventListener('click', function () {
+  window.location.href = 'getstarted.html';
+});
+
+document.getElementById('nav-get-started').addEventListener('click', function () {
+  window.location.href = 'getstarted.html';
+});
+
+
+document.getElementById('sidebar-get-started').addEventListener('click', function () {
+  window.location.href = 'getstarted.html';
+});

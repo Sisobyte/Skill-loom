@@ -1,22 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("signup-form");
+  const signUpBtn = document.getElementById("sign-up-btn");
 
-  if (!form) return;
+  if (!signUpBtn) {
+    console.error("Sign-up button not found!");
+    return;
+  }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-
-    if (!name || !email || !password) {
-      showAlert("Please fill in all fields.", "error");
-      return;
-    }
-
-    // Simulate a successful signup — for demo only
-    showAlert("Sign-up successful! (Demo mode)", "success");
+  signUpBtn.addEventListener("click", function () {
+    showAlert("Creating demo account... Redirecting to dashboard", "success");
 
     setTimeout(() => {
       window.location.href = "dashboard.html";

@@ -1,38 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
+  const signInBtn = document.getElementById("sign-in-btn");
 
-  if (!form) {
-    console.error("Sign-in form not found!");
+  if (!signInBtn) {
+    console.error("Sign-in button not found!");
     return;
   }
 
-  // Demo credentials (for testing only)
-  const demoUser = {
-    email: "demo@skilloom.com",
-    password: "123456",
-  };
+  signInBtn.addEventListener("click", function () {
+    // Optional: Show success alert
+    showAlert("Redirecting to dashboard...", "success");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const emailInput = document.getElementById("email").value.trim();
-    const passwordInput = document.getElementById("password").value;
-
-    if (
-      emailInput === demoUser.email &&
-      passwordInput === demoUser.password
-    ) {
-      showAlert("Login successful!", "success");
-      setTimeout(() => {
-        window.location.href = "dashboard.html";
-      }, 1000);
-    } else {
-      showAlert("Invalid email or password.", "error");
-    }
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 1000);
   });
 });
 
-// Show alert function
+// Reusable alert function
 function showAlert(message, type = "success") {
   const alertBox = document.getElementById("alert-container");
   if (!alertBox) return;

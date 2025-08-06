@@ -15,10 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const user = { name, email, password };
-    localStorage.setItem("user", JSON.stringify(user));
-
-    showAlert("Sign-up successful!", "success");
+    // Simulate a successful signup — for demo only
+    showAlert("Sign-up successful! (Demo mode)", "success");
 
     setTimeout(() => {
       window.location.href = "dashboard.html";

@@ -6,22 +6,21 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  // Demo credentials (for testing only)
+  const demoUser = {
+    email: "demo@skilloom.com",
+    password: "123456",
+  };
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const emailInput = document.getElementById("email").value.trim();
     const passwordInput = document.getElementById("password").value;
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-
-    if (!storedUser) {
-      showAlert("No user found. Please sign up first.", "error");
-      return;
-    }
-
     if (
-      storedUser.email === emailInput &&
-      storedUser.password === passwordInput
+      emailInput === demoUser.email &&
+      passwordInput === demoUser.password
     ) {
       showAlert("Login successful!", "success");
       setTimeout(() => {
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Show alert function (insert once globally or import it)
+// Show alert function
 function showAlert(message, type = "success") {
   const alertBox = document.getElementById("alert-container");
   if (!alertBox) return;

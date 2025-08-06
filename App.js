@@ -1,9 +1,8 @@
-
-
 window.addEventListener('DOMContentLoaded', () => {
   loadPage('dashboard');
   attachNavEvents();
   showUserInitials();
+  attachLogoutEvents();
 });
 
 // Attach nav event handlers
@@ -37,6 +36,9 @@ function loadPage(page) {
       if (page === 'dashboard') {
         updateGreeting(); // ✅ Run after dashboard page is loaded
       }
+
+      // Reattach logout events for dynamically loaded content
+      attachLogoutEvents();
     })
     .catch(err => {
       document.getElementById('page-content').innerHTML = `<p>Failed to load page.</p>`;
@@ -52,52 +54,42 @@ toggleBtn.addEventListener('click', () => {
   attachNavEvents(); // Re-attach events if new elements are shown
 });
 
-// Show user initials in profile circle
+// Show user initials in profile circle (using demo name)
 function showUserInitials() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user && user.name) {
-    const initials = user.name
-      .split(" ")
-      .map(n => n[0])
-      .join("")
-      .toUpperCase();
+  const demoName = "Demo User";
+  const initials = demoName
+    .split(" ")
+    .map(n => n[0])
+    .join("")
+    .toUpperCase();
 
-    const profileEl = document.getElementById("profile-initials");
-    if (profileEl) {
-      profileEl.textContent = initials;
-    }
+  const profileEl = document.getElementById("profile-initials");
+  if (profileEl) {
+    profileEl.textContent = initials;
   }
 }
 
-// Show greeting in dashboard
+// Show greeting in dashboard (using demo name)
 function updateGreeting() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user && user.name) {
-    const greetingEl = document.getElementById("greeting");
-    if (greetingEl) {
-      const firstName = user.name.split(" ")[0];
-      greetingEl.innerHTML = `Hi ${firstName} 👋, Ready To Grow Today?`;
-    }
+  const demoName = "Demo User";
+  const greetingEl = document.getElementById("greeting");
+  if (greetingEl) {
+    const firstName = demoName.split(" ")[0];
+    greetingEl.innerHTML = `Hi ${firstName} 👋, Ready To Grow Today?`;
   }
 }
 
-// Logout logic
+// Logout logic (just redirects — no storage involved)
 function attachLogoutEvents() {
   document.querySelectorAll('.logout').forEach(logoutBtn => {
     logoutBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      localStorage.removeItem('user'); // Remove user from storage
       window.location.href = 'signin.html'; // Redirect to sign-in page
     });
   });
 }
 
-// Re-attach logout links on load and after content loads
-window.addEventListener('DOMContentLoaded', () => {
-  attachLogoutEvents();
-});
-
+// Re-attach logout events for dynamically loaded buttons
 document.addEventListener('click', () => {
-  // Handles dynamically loaded logout buttons
   attachLogoutEvents();
 });

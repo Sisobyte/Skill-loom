@@ -53,68 +53,178 @@ companyBtn.addEventListener('click', () => {
 });
 
 
-// === PROJECT SECTION === //
+
+// ==== PROJECT DATA ====
 const projectData = [
-  // ... your project data here (no changes needed)
+  {
+    title: "BloomHealth",
+    category: "Design",
+    duration: "6 weeks",
+    experience: "Beginner"
+  },
+  {
+    title: "BloomHealth",
+    category: "Design",
+    duration: "6 weeks",
+    experience: "Beginner"
+  },
+  {
+    title: "Advance Data Fellowship",
+    category: "Data Science",
+    duration: "6 weeks",
+    experience: "Beginner"
+  },
+  {
+    title: "Advance Data Fellowship",
+    category: "Data Science",
+    duration: "6 weeks",
+    experience: "Beginner"
+  },
+  {
+    title: "TechSprint",
+    category: "Engineering",
+    duration: "8 weeks",
+    experience: "Intermediate"
+  },
+  {
+    title: "TechSprint",
+    category: "Engineering",
+    duration: "8 weeks",
+    experience: "Intermediate"
+  },
+  {
+    title: "TechSprint",
+    category: "Engineering",
+    duration: "8 weeks",
+    experience: "Intermediate"
+  },
+  {
+    title: "MarketGuru",
+    category: "Marketing",
+    duration: "4 weeks",
+    experience: "Beginner"
+  },
+   {
+    title: "MarketGuru",
+    category: "Marketing",
+    duration: "4 weeks",
+    experience: "Beginner"
+  },
+   {
+    title: "MarketGuru",
+    category: "Marketing",
+    duration: "4 weeks",
+    experience: "Beginner"
+  },
+  {
+    title: "UserLens",
+    category: "Product Research",
+    duration: "5 weeks",
+    experience: "Advanced"
+  },
+  {
+    title: "UserLens",
+    category: "Product Research",
+    duration: "5 weeks",
+    experience: "Advanced"
+  }
 ];
 
-let projectIndex = 0;
-
-function renderProjects() {
-  const projectContainer = document.querySelector('#projects-section .project-cards');
-  const filtered = filterProjects('projects');
-  projectContainer.innerHTML = filtered.map(renderProjectCard).join('');
-}
-
+// ==== RENDER ONE CARD ====
 function renderProjectCard(item) {
   return `
     <div class="project-card">
-      <div class="img-placeholder"><div class="img-bottom-label">${item.category}</div></div>
+      <div class="img-placeholder">
+        <div class="img-top-left">1.2K Students 150 Reviews</div>
+        <div class="img-bottom-label">${item.category}</div>
+      </div>
       <h4>${item.title}</h4>
-      <p><small>${item.duration}</small></p>
+      <p>${item.category} Apprentice<br><small>Mentorship</small></p>
       <div class="project-footer">
-        <div class="meta-block"><p class="value">Duration</p><p class="label">${item.duration}</p></div>
-        <div class="meta-block"><p class="value">Experience</p><p class="label">${item.experience}</p></div>
+        <div class="meta-block">
+          <p class="value">Duration</p>
+          <p class="label">${item.duration}</p>
+        </div>
+        <div class="meta-block">
+          <p class="value">Experience</p>
+          <p class="label">${item.experience}</p>
+        </div>
         <button class="apply-btn">Apply now</button>
       </div>
     </div>
   `;
 }
 
-function filterProjects(section) {
-  const active = document.querySelector(`#${section}-section .filters .active`).textContent;
-  return active === 'All' ? projectData : projectData.filter(p => p.category === active);
+// ==== FILTER FUNCTION ====
+function filterProjects() {
+  const activeFilter = document.querySelector('.filters .filter-left .active').textContent;
+  return activeFilter === 'All'
+    ? projectData
+    : projectData.filter(p => p.category === activeFilter);
 }
 
+// ==== RENDER FUNCTION ====
+function renderProjects() {
+  const container = document.querySelector('#projects-section .project-cards');
+  const filtered = filterProjects();
+  container.innerHTML = filtered.map(renderProjectCard).join('');
+
+  const isAll = document.querySelector('.filters .filter-left .active').textContent === 'All';
+  const isExpanded = container.classList.contains('fixed-grid');
+
+  container.classList.remove('scroll-row', 'grid-view', 'fixed-grid');
+
+  if (isAll && isExpanded) {
+    container.classList.add('fixed-grid'); // 3-column
+  } else if (isAll && !isExpanded) {
+    container.classList.add('scroll-row'); // row scroll
+  } else {
+    container.classList.add('grid-view'); // default filter grid
+  }
+
+  // Arrow visibility
+  const showArrows = isAll && !isExpanded;
+  document.querySelector('.filter-right button:nth-child(2)').style.display =
+  document.querySelector('.filter-right button:nth-child(3)').style.display =
+    showArrows ? 'inline-block' : 'none';
+}
+
+// ==== FILTER BUTTONS ====
 document.querySelectorAll('#projects-section .filters .filter-left button').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('#projects-section .filters .filter-left button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#projects-section .filters .filter-left button')
+      .forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // Reset to row view on filter change
-    document.querySelector('#projects-section .project-cards').classList.remove('grid-view');
+    const container = document.querySelector('#projects-section .project-cards');
+    container.classList.remove('fixed-grid');
+    exploreAllBtn.textContent = 'Explore all →';
 
     renderProjects();
   });
 });
 
+// ==== INITIAL RENDER ====
 renderProjects();
 
-
-// === EXPLORE ALL TOGGLE ===
+// ==== EXPLORE ALL TOGGLE ====
 const exploreAllBtn = document.getElementById('explore-all-btn');
 const projectContainer = document.querySelector('#projects-section .project-cards');
 
 exploreAllBtn.addEventListener('click', () => {
-  projectContainer.classList.toggle('grid-view');
+  const activeFilter = document.querySelector('.filters .filter-left .active').textContent;
+  if (activeFilter !== 'All') return;
 
-  exploreAllBtn.textContent = projectContainer.classList.contains('grid-view')
+  projectContainer.classList.toggle('fixed-grid');
+
+  exploreAllBtn.textContent = projectContainer.classList.contains('fixed-grid')
     ? 'Collapse all ←'
     : 'Explore all →';
+
+  renderProjects();
 });
 
-
-// === Arrow scroll buttons ===
+// ==== SCROLL ARROWS ====
 const leftBtn = document.querySelector('.filter-right button:nth-child(2)');
 const rightBtn = document.querySelector('.filter-right button:nth-child(3)');
 
@@ -125,6 +235,9 @@ leftBtn.addEventListener('click', () => {
 rightBtn.addEventListener('click', () => {
   projectContainer.scrollBy({ left: 300, behavior: 'smooth' });
 });
+
+
+
 
 
 // === GET STARTED REDIRECT ===

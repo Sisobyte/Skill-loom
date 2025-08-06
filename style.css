@@ -474,6 +474,37 @@ body {
   border-radius: 6px;
 }
 
+/* Horizontal scroll row layout */
+.project-cards.scroll-row {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+}
+
+.project-cards.scroll-row .project-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  min-width: 280px;
+}
+
+/* Grid layout for filters (auto-fit for others) */
+.project-cards.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Strict 3-column layout for Expand All */
+.project-cards.fixed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+
+
 
 
 

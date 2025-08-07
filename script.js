@@ -16,7 +16,7 @@ const companyBtn = document.getElementById('companyBtn');
 const title = document.getElementById('toggle-title');
 const desc = document.getElementById('toggle-desc');
 const link = document.getElementById('toggle-link');
-const cards = document.getElementById('toggle-cards');
+const cards = document.querySelector('.cards'); // updated selector
 
 // Toggle apprentice/company section
 apprenticeBtn.addEventListener('click', () => {
@@ -29,10 +29,31 @@ apprenticeBtn.addEventListener('click', () => {
   link.innerText = 'Browse Apprenticeship →';
 
   cards.innerHTML = `
-    <div class="card" id="box1">Build portfolio-worthy work</div>
-    <div class="card" id="box2">Receive mentorship from pros</div>
-    <div class="card" id="box3">Apply to real digital briefs</div>
-    <div class="card" id="box4">Earn endorsements and badges</div>
+    <div class="card" id="box1">
+      <img src="assets/images/01.svg" alt="Portfolio" />
+      <h3>Build portfolio-worthy work</h3>
+      <p>Finish each program with outcomes that prove your skills.</p>
+    </div>
+    <div class="card" id="box2">
+      <img src="assets/images/02.svg" alt="Experience" />
+      <h3>Hands-On Experience</h3>
+      <p>Build real-world projects you can proudly showcase.</p>
+    </div>
+    <div class="card" id="box3">
+      <img src="assets/images/03.svg" alt="Career" />
+      <h3>Career Confidence</h3>
+      <p>Grow through feedback, experience, and real collaboration.</p>
+    </div>
+    <div class="card" id="box4">
+      <img src="assets/images/04.svg" alt="Mentor" />
+      <h3>Mentor Support</h3>
+      <p>Work with experienced mentors who guide and review your progress.</p>
+    </div>
+    <div class="card" id="box5">
+      <img src="assets/images/05.svg" alt="Flexible" />
+      <h3>Flexible Learning</h3>
+      <p>Apprenticeships designed to fit around your schedule.</p>
+    </div>
   `;
 });
 
@@ -45,12 +66,34 @@ companyBtn.addEventListener('click', () => {
   link.innerText = 'Post a Project →';
 
   cards.innerHTML = `
-    <div class="card" id="box1">UI/UX, content,social,dev & more </div>
-    <div class="card" id="box2">Guided apprentices with mentor support </div>
-    <div class="card" id="box3">Clear deliverables & project tracking</div>
-    <div class="card" id="box4">Free or low-cost option for small orgs</div>
+    <div class="card" id="box1">
+      <img src="assets/images/06.svg" alt="Services" />
+      <h3>UI/UX, content, social, dev & more</h3>
+      <p>From design to code, get tailored support across digital disciplines.</p>
+    </div>
+    <div class="card" id="box2">
+      <img src="assets/images/07.svg" alt="Support" />
+      <h3>Guided apprentices with mentor support</h3>
+      <p>Experienced mentors ensure quality delivery from our apprentices.</p>
+    </div>
+    <div class="card" id="box3">
+      <img src="assets/images/08.svg" alt="Deliverables" />
+      <h3>Clear deliverables & project tracking</h3>
+      <p>Stay informed with visible progress and regular updates.</p>
+    </div>
+    <div class="card" id="box4">
+      <img src="assets/images/09.svg" alt="Affordability" />
+      <h3>Free or low-cost option for small orgs</h3>
+      <p>Support your digital goals without stretching your budget.</p>
+    </div>
+    <div class="card" id="box5">
+      <img src="assets/images/10.svg" alt="Flexible" />
+      <h3>Flexible, on-demand support</h3>
+      <p>Tap into help when you need it — no long-term contracts.</p>
+    </div>
   `;
 });
+
 
 
 
@@ -251,4 +294,8 @@ document.getElementById('nav-get-started').addEventListener('click', function ()
 
 document.getElementById('sidebar-get-started').addEventListener('click', function () {
   window.location.href = 'getstarted.html';
+});
+
+document.getElementById('log-in').addEventListener('click', function () {
+  window.location.href = 'signin.html';
 });
